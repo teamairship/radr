@@ -1,6 +1,6 @@
 # Radr
 
-Radr allows you to track the status of websites you care about. This should not be trusted for production sites given it's current feature set. It's primary objective is to teach.
+Radr allows you to track the status of websites you care about.
 
 ## Installation
 
@@ -19,6 +19,11 @@ Create a `.env` file in the root directory and set the following variables that 
 Then start the server:
 
 `rails s`
+
+## TODO
+
+- Add test coverage
+- Add client side validation
 
 ## License
 
