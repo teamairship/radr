@@ -8,7 +8,7 @@ class SitesChannel < ApplicationCable::Channel
   end
 
   def create(params)
-    site = Site.create!(name: params.dig('name'), url: params.dig('url'))
+    site = Site.create(name: params.dig('name'), url: params.dig('url'))
     ActionCable.server.broadcast('sites', site_id: site.id, site: render_site(site))
   end
 
