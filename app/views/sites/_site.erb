@@ -1,0 +1,24 @@
+<div data-site-id="<%= site.id %>" class="site alert alert-<%= status_class_for(site) %>">
+  <div class="media grid -middle">
+    <div class="media-body cell -12of12">
+      <div class="media-heading"><%= site.name.try(:upcase) %></div>
+      <div class="media-content">
+        <%= site.url %>
+        <br>
+        <%= site.latest_pinged_at %>
+        <br>
+        <% if site.description.present? %>
+          <blockquote>
+            <%= site.description %>
+          </blockquote>
+        <% end %>
+        <%= link_to 'history', site %>
+        |
+        <%= link_to 'destroy', '#', class: 'destroy-site', data: { 'site-id' => site.id } %>
+      </div>
+    </div>
+    <div class="media-right">
+      <div class="loader"></div>
+    </div>
+  </div>
+</div>

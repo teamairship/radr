@@ -1,0 +1,44 @@
+<div class="sites show">
+  <p>
+    <%= link_to '« back to sites', sites_path %>
+  </p>
+
+  <h1>
+    <%= @site.name.upcase %> (<%= link_to @site.url, @site.url, target: :blank %>)
+  </h1>
+
+  <% if @site.description.present? %>
+    <blockquote>
+      <%= @site.description %>
+    </blockquote>
+  <% end %>
+
+  <section>
+    <h4>CURRENT</h4>
+    <p>
+      STATUS: <%= @site.latest_status %>
+      <br>
+      PINGED: <%= @site.latest_pinged_at %>
+    </p>
+  </section>
+
+  <section>
+    <h4>HISTORY</h4>
+    <table>
+      <thead>
+        <tr>
+          <th class="-left">pinged_at</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @site.pings.order(:pinged_at).each do |ping| %>
+        <tr>
+          <td><%= ping.pinged_at %></td>
+          <td><%= ping.status %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</div>

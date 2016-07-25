@@ -1,0 +1,30 @@
+<div class="sites index">
+  <h1>RADR</h1>
+  <blockquote>
+    Radr allows you to track the status of websites you care about. This should not be trusted
+    for production sites given it's current feature set. It's primary objective is to teach.
+  </blockquote>
+
+  <h2>NEW SITE</h2>
+  <form id="new-site">
+    <div class="grid -middle">
+      <fieldset class="form-group cell -5of12">
+        <label for="name">NAME:</label>
+        <input id="name" type="text" placeholder="type site name..." class="form-control">
+        <div class="help-block">Name to be used to identify site</div>
+      </fieldset>
+      <fieldset class="form-group cell -5of12">
+        <label for="url">URL:</label>
+        <input id="url" type="text" placeholder="type site url..." class="form-control">
+        <div class="help-block">Be sure to include http/https</div>
+      </fieldset>
+      <div class="form-actions cell -2of12">
+        <button type="submit" class="btn btn-primary btn-block">ADD SITE</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="site-list">
+    <%= render @sites %>
+  </div>
+</div>
